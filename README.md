@@ -59,7 +59,6 @@ You can set our view’s background color to a color created with UIColor’s co
 You can add a UIImageView subview to the view.
 
 - **Choose Correct Data Storage Option:**
-Speed up Launch Time
 What are your options when it comes to storing and reading large data sets?
 We have several options, including:
 Store them using NSUserDefaults
