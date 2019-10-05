@@ -2,8 +2,8 @@
 
 #### [iOS App Performance](#ios-app-performance)
 #### [iOS Coding Guidelines ](#ios-coding-guidelines)
-#### [iOS Standard Guidelines](#ios-standard-guidelines)
-#### [iOS UI Best Practices](#ios-ui-best-practices)
+#### [iOS Standard Guidelines ](#ios-standard-guidelines)
+#### [iOS UI Best Practices ](#ios-ui-best-practices)
 
 #### iOS App Performance
 - **Use ARC to Manage Memory:**
@@ -147,8 +147,10 @@ Not preferred:
 struct Link<E, A> { ... }
 func write<T: OutputStream>(to target: inout target)
  ~~~
+ 
 - **Languages:**
 Use US English spelling to match Apple's API.
+
 Preferred:
 ~~~
 let color = "white"
@@ -164,7 +166,7 @@ Protocol Conformance:
 
  Preferred:
 ~~~
-	class HomeViewController: UIViewController {
+class HomeViewController: UIViewController {
   // class stuff here
 }
 // MARK: - UITableViewDataSource
@@ -182,18 +184,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UIScrollViewD
   // all methods
 }
 ~~~
-- Unused Code: 
+- **Unused Code :** 
 Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
 override func didReceiveMemoryWarning() {
   super.didReceiveMemoryWarning()
   // Dispose of any resources that can be recreated.
 }
-- Minimal Imports:
-For example, don't import UIKit when importing Foundation will suffice.
-- Spacing:
-Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode 
+
+- **Minimal Imports :**
+For example, don't import UIKit when importing Foundation will sufficent.
+
+- **Spacing :**
+Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode.
+
 Tip: You can re-indent by selecting some code (or ⌘A to select all) and then Control-I (or Editor\Structure\Re-Indent in the menu). Some of the Xcode template code will have 4-space tabs hard coded, so this is a good way to fix that.
 Method braces and other braces (if/else/switch/while etc.) always open on the same line as the statement but close on a new line
+
 Preferred:
 ~~~
 if user.isHappy {
@@ -212,6 +218,7 @@ if user.isHappy
   // Do something else
 }
 ~~~
+
 - **Comments:**
 When they are needed, use comments to explain why a particular piece of code does something. Comments must be kept up-to-date or deleted.
 
@@ -229,6 +236,7 @@ Use self only when required by the compiler (in @escaping closures, or in initia
 
 - **Computed Properties :**
 For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
+
 Preferred:
 ~~~
 var diameter: Double {
@@ -245,29 +253,31 @@ var diameter: Double {
 ~~~
 - **Final:** 
 Marking classes or members as final in tutorials can distract from the main topic and is not required. Nevertheless, use of final can sometimes clarify your intent and is worth the cost. In the below example, Box has a particular purpose and customization in a derived class is not intended. Marking it final makes that clear.
+
  - **Function Declaration :**
- 
  Keep short function declarations on one line including the opening brace.
 
 - **Closures Expressions :**
-
 Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.
+
 	attendeeList.sort { a, b in
 	  a > b
 	}
+	
 - **Types:**
 Always use Swift's native types when available. Swift offers bridging to Objective-C so you can still use the full set of methods as needed.
 
 Preferred:
 ~~~
 let width = 120.0                                    // Double
-	let widthString = (width as NSNumber).stringValue //String
+let widthString = (width as NSNumber).stringValue //String
 ~~~
 Not Preferred:
 ~~~
-	let width: NSNumber = 120.0                          // NSNumber
-	let widthString: NSString = width.stringValue        // NSString
+let width: NSNumber = 120.0                          // NSNumber
+let widthString: NSString = width.stringValue        // NSString
 ~~~
+
 - **Constants:**
 Constants are defined using the let keyword, and variables with the var keyword. Always use let instead of var if the value of the variable will not change.
 Tip: A good technique is to define everything using let and only change it to var if the compiler complains!
@@ -287,28 +297,32 @@ let e = 2.718281828459045235360287  // pollutes global namespace
 let root2 = 1.41421356237309504880168872
 let hypotenuse = side * root2 // what is root2?
  ~~~
+ 
 - **Optionals :**
 Declare variables and function return types as optional with ? where a nil value is acceptable.
 
 Preferred:
 ~~~
 var subview: UIView?
-	var volume: Double?
+var volume: Double?
 // later on...
-	if let subview = subview, let volume = volume {
- 	 // do something with unwrapped subview and volume
-	}
-~~~	
+if let subview = subview, let volume = volume {
+// do something with unwrapped subview and volume
+}
+~~~
+
 Not Preferred:
 ~~~
-	var optionalSubview: UIView?
-	var volume: Double?
-	if let unwrappedSubview = optionalSubview {
- 	 if let realVolume = volume {
-   	 // do something with unwrappedSubview and realVolume
-  	}
-	}
-~~~	
+var optionalSubview: UIView?
+var volume: Double?
+if let unwrappedSubview = optionalSubview {
+ if let realVolume = volume {
+   // do something with unwrappedSubview and realVolume
+  }
+}
+
+~~~
+
 - **Lazy Initialization :**
 Consider using lazy initialization for finer grain control over object lifetime. This is especially true for UIViewControllerthat loads views lazily. You can either use a closure that is immediately called { }() or call a private factory method. 
 
@@ -330,20 +344,22 @@ Use access control as the leading property specifier. The only things that shoul
 
 Preferred:
 ~~~
-private let message = "Great Scott!"
-	class TimeMachine {  
-  		fileprivate dynamic lazy var fluxCapacitor = FluxCapacitor()
-	}
+private let message = "Great Time!"
+class TimeMachine {  
+  fileprivate dynamic lazy var capacitor = Capacitor()
+}
 ~~~
 Not Preferred:
 ~~~
-fileprivate let message = "Great Scott!"
-	class TimeMachine {  
- 	 	lazy dynamic fileprivate var fluxCapacitor = FluxCapacitor()
-	}
+fileprivate let message = "Great Time!"
+class TimeMachine {  
+  lazy dynamic fileprivate var capacitor = Capacitor()
+}
  ~~~
+ 
 - **Control Flow :**
 Prefer the for-in style of for loop over the while-condition-increment style.
+
 - **GoldenPath :**
 When coding with conditionals, the left-hand margin of the code should be the "golden" or "happy" path. That is, don't nest if statements. Multiple return statements are OK. The guard statement is built for this.
 
@@ -357,7 +373,7 @@ guard let number1 = number1,
  ~~~
 Not Preferred: 
 ~~~
-	if let number1 = number1 {
+if let number1 = number1 {
   if let number2 = number2 {
     if let number3 = number3 {
       // do something with numbers
@@ -371,8 +387,10 @@ Not Preferred:
   fatalError("impossible")
 }
 ~~~
+
 - **Semicolons :**
 Swift does not require a semicolon after each statement in your code. They are only required if you wish to combine multiple statements on a single line.
+
 - **Parentheses :**
 Parentheses around conditionals are not required and should be omitted. Note: In larger expressions, optional parentheses can sometimes make code read more clearly. 
 
