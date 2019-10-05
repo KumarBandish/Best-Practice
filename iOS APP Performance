@@ -1,1 +1,3 @@
 
+1 Use ARC to Manage Memory: 
+Automatic Reference Counting (ARC) is Swift’s system of tracking memory we’re using. When we create an object from a class, Swift remembers that instance is being referenced precisely once. If we then point another variable at that object, Swift will increment the reference count to 2, because two variables are pointing at the same object. If we now destroy the first variable (perhaps it was inside a function and that function ended), Swift takes the reference count back down to 1.
