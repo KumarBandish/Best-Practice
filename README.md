@@ -46,14 +46,13 @@ Some objects are very slow to initialize- NSDateFormatter and NSCalendar are two
 To avoid performance bottlenecks when working with these objects, try to reuse these objects if at all possible. You can do this by either adding a property to our class, or by creating a static variable.
 Note that if you choose the second approach, the object will remain in memory while our app is running, much like a singleton.
 
-- **Avoid Re-Processing Data**
+- **Avoid Re-Processing Data :**
 Many apps make calls for data from remote servers to get information the app requires to function. This data usually comes across in JSON or XML format. It’s important to try and use the same data structure at both ends when requesting and receiving the data. Why? Manipulating data in memory to fit our data structures can be expensive.
 
 - **Choose the Right Data Format:**
 There are multiple ways we can transfer data to our app from a web service, but the most common two are JSON and XML. You want to make sure you choose the right one for our app.
 
 - **Set Background Images Appropriately:**
-Choose Correct Data Storage Option
 There’s at least two different ways to place a background image on our view:
 You can set our view’s background color to a color created with UIColor’s colorWithPatternImage.
 You can add a UIImageView subview to the view.
