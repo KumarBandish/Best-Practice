@@ -252,6 +252,7 @@ Use trailing closure syntax only if there's a single closure expression paramete
 	}
 - **Types:**
 Always use Swift's native types when available. Swift offers bridging to Objective-C so you can still use the full set of methods as needed.
+
 Preferred:
 ~~~
 let width = 120.0                                    // Double
@@ -266,6 +267,7 @@ Not Preferred:
 Constants are defined using the let keyword, and variables with the var keyword. Always use let instead of var if the value of the variable will not change.
 Tip: A good technique is to define everything using let and only change it to var if the compiler complains!
 You can define constants on a type rather than on an instance of that type using type properties. To declare a type property as a constant simply use static let. Type properties declared in this way are generally preferred over global constants because they are easier to distinguish from instance properties.
+
 Preferred:
 ~~~
 enum Math {
@@ -291,7 +293,7 @@ var subview: UIView?
 	if let subview = subview, let volume = volume {
  	 // do something with unwrapped subview and volume
 	}
-	~~~
+~~~	
 Not Preferred:
 ~~~
 	var optionalSubview: UIView?
@@ -301,7 +303,7 @@ Not Preferred:
    	 // do something with unwrappedSubview and realVolume
   	}
 	}
-	~~~
+~~~	
 - **Lazy Initialization :**
 Consider using lazy initialization for finer grain control over object lifetime. This is especially true for UIViewControllerthat loads views lazily. You can either use a closure that is immediately called { }() or call a private factory method. 
 
