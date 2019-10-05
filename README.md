@@ -243,9 +243,9 @@ var diameter: Double {
 ~~~
 - **Final:** 
 Marking classes or members as final in tutorials can distract from the main topic and is not required. Nevertheless, use of final can sometimes clarify your intent and is worth the cost. In the below example, Box has a particular purpose and customization in a derived class is not intended. Marking it final makes that clear.
-14. Function Declaration:
+ - **Function Declaration: **
 Keep short function declarations on one line including the opening brace.
-15. Closures Expressions:
+- **Closures Expressions: **
 Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.
 	attendeeList.sort { a, b in
 	  a > b
