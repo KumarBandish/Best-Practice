@@ -4,6 +4,7 @@ Best practices for iOS App Development
 #### [iOS App Performance](#ios-app-performance)
 #### [iOS Coding Guidelines ](#ios-coding-guidelines)
 #### [iOS Standard Guidelines](#ios-standard-guidelines)
+#### [iOS UI Best Practices](#ios-ui-best-practices)
 
 #### iOS App Performance
 - **Use ARC to Manage Memory:**
@@ -390,3 +391,19 @@ if (name == "Bandish") {
 - Always write a wrapper for third party libraries so that the library is imported only in the wrapper. This ensures data Abstraction. 
 - Structure the files by setting up some folder structure depending on app architecture
 - Profile the app with Instruments before sending build.
+
+#### iOS UI Best Practices
+- Create a common class for Color theme and use that everywhere
+- Create BaseViewController that has common functions(showing alert, network checker, etc) and inherit from it
+- Use Autolayout for positioning any UI element(avoid setting frames)
+- Do not fix the height for UI element. Instead set the constraints accordingly.
+- Set the constraints with multiplier or priority when required(instead of setting constant value)
+- Use placeholder images till the actual image is downloaded(Download should happen in background. Do not block main thread)
+- Request personal data only when your app clearly needs it
+- use standard navigation controls such as page controls, tab bars, segmented controls, table views, collection views, and split views.
+- Use a navigation bar to traverse a hierarchy of data.
+- Fix the UIImageView Content Mode
+- Test Different iPhone Size Classes
+- Fix Constraint Conflicts
+- Don’t use a single Storyboard file for your entire app. Create one storyboard file for each flow in the app. 
+- Use size classes for iPhone & iPad UI(Don’t Create separate UI).
