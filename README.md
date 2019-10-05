@@ -115,7 +115,7 @@ Preferred:
 ~~~
 let message = "Click the button"
 let calculateBounds = calculateViewBounds()
-var names = ["Meera", "Naveen", "bandish"]
+let names: [String] = ["Bandish", "Ansh", "Aashray"]
 let maximumWidth: CGFloat = 100.9
 var names: [String] = []
 var lookupDictionary: [String: Int] = [:]
@@ -159,7 +159,9 @@ let colour = "white"
  ~~~
 - **Code Organisation:**
 Use extensions to organize your code into logical blocks of functionality. Each extension should be set off with a // MARK: - comment to keep things well-organized.
+
 Protocol Conformance:
+
  Preferred:
 ~~~
 	class HomeViewController: UIViewController {
@@ -224,7 +226,8 @@ Classes have reference semantics. Use classes for things that do have an identit
 
 For conciseness, avoid using self since Swift does not require it to access an object's properties or invoke its methods.
 Use self only when required by the compiler (in @escaping closures, or in initializers to disambiguate properties from arguments). In other words, if it compiles without self then omit it.
-12. Computed Properties:
+
+- **Computed Properties :**
 For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
 Preferred:
 ~~~
