@@ -2,7 +2,9 @@
 Best practices for iOS App Development
 
 #### [iOS App Performance](#ios-app-performance)
-#### [iOS Coding Guidelines](#ios-coding-guidelines)
+#### [iOS Coding Guidelines ](#ios-coding-guidelines)
+#### [iOS Standard Guidelines](#ios-standard-guidelines)
+
 #### iOS App Performance
 - **Use ARC to Manage Memory:**
 Automatic Reference Counting (ARC) is Swift’s system of tracking memory we’re using. When we create an object from a class, Swift remembers that instance is being referenced precisely once. If we then point another variable at that object, Swift will increment the reference count to 2, because two variables are pointing at the same object. If we now destroy the first variable (perhaps it was inside a function and that function ended), Swift takes the reference count back down to 1.
@@ -70,8 +72,8 @@ Use Core Data and Realm.
 Launching our app quickly is very important, especially when the user launches for the first time. First impressions mean a lot for an app!.
 The biggest thing that you can do to ensure our app starts as quickly as possible is to perform as many asynchronous tasks as possible, such as network requests, database access, or parsing data.
 
-
 ### iOS Coding Guidelines
+
 - **Correctness :**
  	Strive to make your code compile without warnings.
 
@@ -379,3 +381,12 @@ if (name == "Bandish") {
 }
 ~~~
 
+#### iOS Standard Guidelines
+
+- Cocoapod is used as dependency manager (using cocoapods is very easy, and all third-party frameworks use this manager.)
+- The properties of a model class should not be declared as “var”, unless there are such requirements
+- Structure the code with PRAGMA MARKS and comments.
+- Do not store sensitive data in UserDefaults/plist/DB. Always use Keychain.
+- Always write a wrapper for third party libraries so that the library is imported only in the wrapper. This ensures data Abstraction. 
+- Structure the files by setting up some folder structure depending on app architecture
+- Profile the app with Instruments before sending build.
