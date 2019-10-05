@@ -1,5 +1,4 @@
-# Best-Practice
-Best practices for iOS App Development
+# Best practices for iOS App Development
 
 #### [iOS App Performance](#ios-app-performance)
 #### [iOS Coding Guidelines ](#ios-coding-guidelines)
