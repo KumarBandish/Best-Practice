@@ -113,7 +113,7 @@ Preferred:
 ~~~
 let message = "Click the button"
 let calculateBounds = calculateViewBounds()
-let names: [String] = ["Bandish", "Ansh", "Aashray"]
+let names: [String] = ["Bandish", "Kumar", "Singh"]
 let maximumWidth: CGFloat = 100.9
 var names: [String] = []
 var lookupDictionary: [String: Int] = [:]
